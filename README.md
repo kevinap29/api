@@ -2,4 +2,4 @@
 Membuat login 2-Step Verification Google Authenticator
 
 # Pengaturan
-Ubah connection.php dan sesuaikan dengan pengaturan server anda
+jangan lupa install GoogleAuthenticator dengan perintah composer install, lalu ubah connection.php dan sesuaikan dengan pengaturan server anda
