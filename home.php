@@ -81,7 +81,7 @@ else {
         <a class="nav-link" href="home.php">Beranda <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="?page=cekongkir">Cek ongkir <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?page=cekongkir">Cek Ongkir <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -105,7 +105,7 @@ else {
 					<h1 class="card-title">Dashboard</h1>
 				</div>
 				<div class="card-body">
-					Selamat Datang, <?=$name?>
+					Selamat Datang, <strong><?=$name?></strong>
 				</div>
         <?php
         include('data-kota.php');
