@@ -61,16 +61,14 @@ else {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard Admin</title>
+    <?php include('include/meta.php');?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Integrasi Sistem</a>
+  <a class="navbar-brand" href="home.php?page=home">Integrasi Sistem</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -78,10 +76,13 @@ else {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Beranda <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php?page=home">Beranda <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="?page=cekongkir">Cek Ongkir <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="?page=alquran">Al-Qur'an <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -90,7 +91,7 @@ else {
           <?=$name?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a href="logout.php">Logout</a>
+          <a href="logout.php" class="text-danger">Logout</a>
         </div>
       </li>
     </ul>
@@ -102,19 +103,33 @@ else {
 		<div class="col-12">
 			<div class="card">
         <div class="card-header">
-					<h1 class="card-title">Dashboard</h1>
+          <?php
+            if ($_GET['page']=='cekongkir') {
+              echo '<h1 class="card-title">Cek Ongkir API</h1>';
+            }elseif ($_GET['page']=='alquran') {
+              echo '<h1 class="card-title">Al-Quran API</h1>';
+            }elseif ($_GET['page']=='alquran-detail') {
+              echo '<h1 class="card-title">Detail Al-Quran</h1>';
+            }elseif ($_GET['page']=='home'){
+              echo '<h1 class="card-title">Dashboard</h1>';
+            }
+          ?>
 				</div>
 				<div class="card-body">
-					Selamat Datang, <strong><?=$name?></strong>
-				</div>
         <?php
         include('data-kota.php');
           if ($_GET['page']=='cekongkir') {
             include('cekongkir.php');
-          }else{
+          }elseif ($_GET['page']=='alquran') {
+            include('alquran.php');
+          }elseif ($_GET['page']=='alquran-detail') {
+            include('alquran_detail.php');
+          }elseif ($_GET['page']=='home'){
+            echo 'Selamat Datang, <strong>'.$name.'</strong>';
             include('main.php');
           }
         ?>
+        </div>
 			</div>
 		</div>
 	</div>
