@@ -64,6 +64,8 @@ else {
     <?php include('include/meta.php');?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img\favicon\favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -104,15 +106,7 @@ else {
 			<div class="card">
         <div class="card-header">
           <?php
-            if ($_GET['page']=='cekongkir') {
-              echo '<h1 class="card-title">Cek Ongkir API</h1>';
-            }elseif ($_GET['page']=='alquran') {
-              echo '<h1 class="card-title">Al-Quran API</h1>';
-            }elseif ($_GET['page']=='alquran-detail') {
-              echo '<h1 class="card-title">Detail Al-Quran</h1>';
-            }elseif ($_GET['page']=='home'){
-              echo '<h1 class="card-title">Dashboard</h1>';
-            }
+            include('include/header-page.php');
           ?>
 				</div>
 				<div class="card-body">
@@ -125,7 +119,6 @@ else {
           }elseif ($_GET['page']=='alquran-detail') {
             include('alquran_detail.php');
           }elseif ($_GET['page']=='home'){
-            echo 'Selamat Datang, <strong>'.$name.'</strong>';
             include('main.php');
           }
         ?>

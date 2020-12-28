@@ -42,9 +42,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `google_secret_code`) VALUES
-(1, 'Kevin Agustiansyah Putra', 'kevin29', 'agustiansyahkevin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'DE5ITT6HRFDK5RRG'),
-(4, 'kevinap', 'kevin', 'kevin@kevin.com', 'e10adc3949ba59abbe56e057f20f883e', 'YPJHOJYUW7QLNHOW'),
-(5, 'tes1', 'tes', 'tes@tes.com', '28b662d883b6d76fd96e4ddc5e9ba780', 'XJGN3R25X5KL67PX');
+(1, 'Kevin Agustiansyah Putra', 'kevin29', 'agustiansyahkevin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'DE5ITT6HRFDK5RRG')
 
 --
 -- Indexes for dumped tables

@@ -23,7 +23,7 @@ if (isset($_POST['btnValidate'])) {
         if($pga->verifyCode($secret, $code, 2))
         {
         		$_SESSION['secret'] = $secret;
-            echo '<script>window.location="home.php";</script>';
+            echo '<script>window.location="home.php?page=home";</script>';
         }
         else
         {
